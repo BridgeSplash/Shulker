@@ -15,9 +15,9 @@ if [ ! -z "${SERVER_WORLD_URL+x}" ]; then
 fi
 
 if [ ! -z "${SHULKER_SERVER_PLUGIN_URLS+x}" ]; then
-  mkdir -p "${SHULKER_SERVER_CONFIG_DIR}/plugins"
+  mkdir -p "${SHULKER_SERVER_CONFIG_DIR}/${SHULKER_SERVER_PLUGIN_FOLDER_LOCATION}"
   for plugin_url in ${SHULKER_SERVER_PLUGIN_URLS//;/ }; do
-    (cd "${SHULKER_SERVER_CONFIG_DIR}/plugins" && wget "${plugin_url}")
+    (cd "${SHULKER_SERVER_CONFIG_DIR}/${SHULKER_SERVER_PLUGIN_FOLDER_LOCATION}" && wget "${plugin_url}")
   done
 fi
 

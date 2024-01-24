@@ -91,6 +91,11 @@ pub struct MinecraftServerConfigurationSpec {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub patches: Option<Vec<ResourceRefSpec>>,
 
+    /// Location of the plugins folder inside the server. Defaults to
+    /// `plugins` but can be changed to `mods` for example
+    #[serde(default = "Option::is_none")]
+    pub plugin_folder_location: Option<String>,
+
     /// Number of maximum players that can connect to the
     /// MinecraftServer Deployment
     #[schemars(default = "MinecraftServerConfigurationSpec::default_max_players")]

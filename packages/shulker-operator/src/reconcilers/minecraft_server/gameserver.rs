@@ -328,6 +328,8 @@ impl<'a> GameServerBuilder {
             GameServerBuilder::get_plugin_urls(resourceref_resolver, context, minecraft_server)
                 .await?;
 
+        let plugin_folder_location = &minecraft_server.spec.config.plugin_folder_location;
+
         let mut env: Vec<EnvVar> = vec![
             EnvVar {
                 name: "SHULKER_CONFIG_DIR".to_string(),
@@ -349,6 +351,11 @@ impl<'a> GameServerBuilder {
                 value: Some(spec.version.channel.to_string()),
                 ..EnvVar::default()
             },
+            EnvVar{
+                name: "SHULKER_SERVER_PLUGIN_FOLDER_LOCATION".to_string(),
+                value: Some(plugin_folder_location.clone().unwrap_or("plugins".to_string())),
+                ..EnvVar::default()
+            }
         ];
 
         if let Some(world) = &spec.config.world {
@@ -546,6 +553,7 @@ impl<'a> GameServerBuilder {
             MinecraftServerVersion::Paper | MinecraftServerVersion::Folia => {
                 Some("paper".to_string())
             }
+            MinecraftServerVersion::Minestom => Some("minestom".to_string()),
         };
 
         let mut plugin_refs: Vec<Url> = vec![];
@@ -577,6 +585,7 @@ impl<'a> GameServerBuilder {
         match channel {
             MinecraftServerVersion::Paper => "PAPER".to_string(),
             MinecraftServerVersion::Folia => "FOLIA".to_string(),
+            MinecraftServerVersion::Minestom => "MINESTOM".to_string(),
         }
     }
 

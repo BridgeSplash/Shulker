@@ -360,6 +360,8 @@ impl<'a> FleetBuilder {
         let plugin_urls =
             FleetBuilder::get_plugin_urls(&self.resourceref_resolver, context, proxy_fleet).await?;
 
+        let plugins_folder_location = &spec.config.plugin_folder_location;
+
         let mut env: Vec<EnvVar> = vec![
             EnvVar {
                 name: "SHULKER_CONFIG_DIR".to_string(),
@@ -376,6 +378,11 @@ impl<'a> FleetBuilder {
                 value: Some(spec.version.channel.to_string()),
                 ..EnvVar::default()
             },
+            EnvVar{
+                name: "SHULKER_PLUGIN_FOLDER_LOCATION".to_string(),
+                value: Some(plugins_folder_location.clone().unwrap_or("plugins".to_string())),
+                ..EnvVar::default()
+            }
         ];
 
         if !plugin_urls.is_empty() {

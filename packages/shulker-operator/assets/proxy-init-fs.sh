@@ -13,9 +13,9 @@ else
 fi
 
 if [ ! -z "${SHULKER_PROXY_PLUGIN_URLS+x}" ]; then
-  mkdir -p "${SHULKER_PROXY_DATA_DIR}/plugins"
+  mkdir -p "${SHULKER_PROXY_DATA_DIR}/${SHULKER_PLUGIN_FOLDER_LOCATION}"
   for plugin_url in ${SHULKER_PROXY_PLUGIN_URLS//;/ }; do
-    (cd "${SHULKER_PROXY_DATA_DIR}/plugins" && wget "${plugin_url}")
+    (cd "${SHULKER_PROXY_DATA_DIR}/${SHULKER_PLUGIN_FOLDER_LOCATION}" && wget "${plugin_url}")
   done
 fi
 
