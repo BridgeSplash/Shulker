@@ -194,9 +194,8 @@ dist
 # vuepress build output
 .vuepress/dist
 
-# vuepress v2.x temp and cache directory
+# vuepress v2.x temp
 .temp
-.cache
 
 # Docusaurus cache and generated files
 .docusaurus
@@ -249,9 +248,6 @@ gradle-app.setting
 ### Kotlin template
 # Compiled class file
 *.class
-
-# Log file
-*.log
 
 # BlueJ files
 *.ctxt
