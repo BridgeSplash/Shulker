@@ -4,7 +4,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             version("kotlin", "1.9.10")
-            version("kubernetes-client", "6.9.2")
+            version("kubernetes-client", "6.10.0")
             version("grpc", "1.61.0")
 
             library("adventure-api", "net.kyori:adventure-api:4.15.0")
@@ -22,7 +22,7 @@ dependencyResolutionManagement {
             library("kubernetes-client", "io.fabric8", "kubernetes-client").versionRef("kubernetes-client")
             library("kubernetes-client-api", "io.fabric8", "kubernetes-client-api").versionRef("kubernetes-client")
             library("kubernetes-client-http", "io.fabric8", "kubernetes-httpclient-okhttp").versionRef("kubernetes-client")
-            library("protobuf", "com.google.protobuf:protobuf-java:3.25.1")
+            library("protobuf", "com.google.protobuf:protobuf-java:3.25.2")
             library("velocity-api", "com.velocitypowered:velocity-api:3.1.1")
             library("minestom-api", "com.github.Minestom:Minestom:f6596926f6")
 
