@@ -4,6 +4,7 @@ import com.agones.dev.sdk.AgonesSDK
 import com.agones.dev.sdk.AgonesSDKImpl
 import io.shulkermc.serveragent.api.ShulkerServerAPI
 import io.shulkermc.serveragent.api.ShulkerServerAPIImpl
+import io.shulkermc.serveragent.logger.AgentLoggerInterface
 import io.shulkermc.serveragent.services.PlayerMovementService
 import io.shulkermc.serveragent.tasks.HealthcheckTask
 import java.lang.Exception
@@ -12,7 +13,7 @@ import java.util.logging.Level
 import java.util.logging.Logger
 import kotlin.system.exitProcess
 
-class ShulkerServerAgentCommon(val serverInterface: ServerInterface, val logger: Logger) {
+class ShulkerServerAgentCommon(val serverInterface: ServerInterface, val logger: AgentLoggerInterface) {
     companion object {
         private const val SUMMON_LABEL_NAME = "shulkermc.io/summoned"
         private const val SUMMON_TIMEOUT_MINUTES = 5L
@@ -29,7 +30,7 @@ class ShulkerServerAgentCommon(val serverInterface: ServerInterface, val logger:
 
     fun onServerInitialization() {
         try {
-            this.logger.fine("Creating Agones SDK from environment")
+            this.logger.debug("Creating Agones SDK from environment")
             this.agonesGateway = AgonesSDKImpl.createFromEnvironment()
             val gameServer = this.agonesGateway.getGameServer().get()
             this.logger.info(
@@ -58,7 +59,7 @@ class ShulkerServerAgentCommon(val serverInterface: ServerInterface, val logger:
 
             this.agonesGateway.setReady()
         } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
-            this.logger.log(Level.SEVERE, "Shulker Agent crashed, stopping server", e)
+            this.logger.severe("Shulker Agent crashed, stopping server", e)
             this.shutdown()
         }
     }
@@ -74,8 +75,7 @@ class ShulkerServerAgentCommon(val serverInterface: ServerInterface, val logger:
         try {
             this.agonesGateway.askShutdown()
         } catch (@Suppress("TooGenericExceptionCaught") e: Exception) {
-            this.logger.log(
-                Level.SEVERE,
+            this.logger.severe(
                 "Failed to ask Agones sidecar to shutdown properly, stopping process manually",
                 e
             )

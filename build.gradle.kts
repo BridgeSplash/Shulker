@@ -51,6 +51,7 @@ subprojects {
         mavenCentral()
         maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
         maven(url = "https://repo.papermc.io/repository/maven-public/")
+        maven(url = "https://jitpack.io")
     }
 
     tasks {
@@ -243,13 +244,14 @@ subprojects {
         }
     } else if (project.name == "shulker-server-agent") {
         val commonSourceSet = sourceSets.create("common")
-        setOf("paper").forEach { providerName ->
+        setOf("paper", "minestom").forEach { providerName ->
             registerPluginProvider(providerName, commonSourceSet)
         }
 
         dependencies {
             "commonCompileOnly"(libs.adventure.api)
             "paperCompileOnly"(libs.folia.api)
+            "minestomCompileOnly"(libs.minestom.api)
         }
     }
 }

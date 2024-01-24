@@ -24,6 +24,7 @@ dependencyResolutionManagement {
             library("kubernetes-client-http", "io.fabric8", "kubernetes-httpclient-okhttp").versionRef("kubernetes-client")
             library("protobuf", "com.google.protobuf:protobuf-java:3.25.1")
             library("velocity-api", "com.velocitypowered:velocity-api:3.1.1")
+            library("minestom-api", "com.github.Minestom:Minestom:f6596926f6")
 
             plugin("buildconfig", "com.github.gmazzo.buildconfig").version("4.1.2")
             plugin("shadow", "com.github.johnrengelman.shadow").version("8.1.0")

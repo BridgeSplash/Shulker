@@ -7,7 +7,7 @@ dependencies {
     commonImplementation(project(":packages:google-agones-sdk"))
 }
 
-setOf("paperJar").forEach { taskName ->
+setOf("paperJar", "minestomJar").forEach { taskName ->
     tasks.named(taskName, ShadowJar::class.java) {
         mergeServiceFiles()
     }
