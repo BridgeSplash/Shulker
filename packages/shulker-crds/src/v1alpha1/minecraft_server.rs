@@ -93,7 +93,7 @@ pub struct MinecraftServerConfigurationSpec {
 
     /// Location of the plugins folder inside the server. Defaults to
     /// `plugins` but can be changed to `mods` for example
-    #[serde(default = "Option::is_none")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub plugin_folder_location: Option<String>,
 
     /// Number of maximum players that can connect to the
