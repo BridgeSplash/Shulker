@@ -7,7 +7,7 @@
     "node": "^20"
   },
   "repository": {
-    "url": "git@github.com:jeremylvln/Shulker.git"
+    "url": "git@github.com:bridgesplash/Shulker.git"
   },
   "scripts": {
     "prepare": "husky install && npm run proto:build",

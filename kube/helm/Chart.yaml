@@ -6,7 +6,7 @@ name: shulker-operator
 description: A Kubernetes operator for managing complex and dynamic Minecraft infrastructures.
 home: https://shulker.jeremylvln.fr
 sources:
-  - https://github.com/jeremylvln/Shulker
+  - https://github.com/bridgesplash/Shulker
 dependencies:
   - name: shulker-addon-matchmaking
     version: 0.0.0-internal

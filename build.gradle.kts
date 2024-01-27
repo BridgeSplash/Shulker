@@ -40,7 +40,6 @@ subprojects {
     apply(plugin = "java-library")
     apply(plugin = "jacoco")
     apply(plugin = "maven-publish")
-    apply(plugin = "signing")
 
     group = "io.shulkermc"
 
@@ -145,14 +144,14 @@ subprojects {
 
                 pom {
                     name.set(project.name)
-                    url.set("https://github.com/jeremylvln/shulker")
+                    url.set("https://github.com/bridgesplash/shulker")
 
                     scm {
-                        url.set("https://github.com/jeremylvln/shulker")
+                        url.set("https://github.com/bridgesplash/shulker")
                     }
 
                     issueManagement {
-                        url.set("https://github.com/jeremylvln/shulker/issues")
+                        url.set("https://github.com/bridgesplash/shulker/issues")
                     }
 
                     licenses {
@@ -168,32 +167,17 @@ subprojects {
                             name.set("Jérémy Levilain")
                             email.set("jeremy@jeremylvln.fr")
                         }
+                        developer {
+                            id.set("BridgeSplash")
+                            name.set("TropicalShadow")
+                            email.set("me@bridgesplash.net")
+                        }
                     }
                 }
             }
         }
 
-        repositories {
-            maven {
-                name = "shulker"
 
-                url = if ((version as String).endsWith("-SNAPSHOT")) {
-                    uri("https://maven.jeremylvln.fr/artifactory/shulker-snapshots")
-                } else {
-                    uri("https://maven.jeremylvln.fr/artifactory/shulker-releases")
-                }
-
-                credentials {
-                    username = findProperty("artifactory.username")?.toString() ?: System.getenv("ARTIFACTORY_USERNAME")
-                    password = findProperty("artifactory.password")?.toString() ?: System.getenv("ARTIFACTORY_PASSWORD")
-                }
-            }
-        }
-    }
-
-    signing {
-        useGpgCmd()
-        sign(publishing.publications["mavenJava"])
     }
 
     fun registerPluginProvider(providerName: String, commonSourceSet: SourceSet) {

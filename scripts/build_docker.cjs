@@ -21,7 +21,7 @@ if (
   showUsage();
 }
 
-const baseTag = `ghcr.io/jeremylvln/${appName}`;
+const baseTag = `ghcr.io/bridgesplash/${appName}`;
 const tags =
   typeof version === 'string'
     ? [
