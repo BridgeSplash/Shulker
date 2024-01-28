@@ -13,7 +13,7 @@ global:
 # Configuration dedicated to the Shulker Operator
 operator:
   image:
-    repository: ghcr.io/jeremylvln/shulker-operator
+    repository: ghcr.io/bridgesplash/shulker-operator
     pullPolicy: Always
     # Overrides the image tag whose default is the chart appVersion.
     tag: ""
