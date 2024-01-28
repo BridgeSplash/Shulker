@@ -88,6 +88,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
       - name: Install tools
         uses: ./.github/actions/install-tools
 
