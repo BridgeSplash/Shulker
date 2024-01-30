@@ -1,3 +1,13 @@
+## [1.0.1](https://github.com/bridgesplash/Shulker/compare/v1.0.0...v1.0.1) (2024-01-30)
+
+
+### :bug: Bug Fixes :bug:
+
+* correct version values in Cargo.lock ([f6a17f9](https://github.com/bridgesplash/Shulker/commit/f6a17f92921bdaa40ff8b606864cdc276d73fde8))
+* setup gradle in github actions ([602611c](https://github.com/bridgesplash/Shulker/commit/602611c432f2fde7aed698f557b598e52f83db9b))
+* temporary hardcode version for compatability ([e1b2df2](https://github.com/bridgesplash/Shulker/commit/e1b2df2a8854efbf4b059cb9e4e6dd30101687a8))
+* use bridgesplash image location ([18f23d7](https://github.com/bridgesplash/Shulker/commit/18f23d7780668480f201ae254cba5840df02355b))
+
 ## 1.0.0 (2024-01-27)
 
 
