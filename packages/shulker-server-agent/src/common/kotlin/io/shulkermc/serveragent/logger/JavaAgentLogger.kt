@@ -3,7 +3,7 @@ package io.shulkermc.serveragent.logger
 import java.util.logging.Level
 import java.util.logging.Logger
 
-class JavaAgentLogger(private val logger: Logger): AgentLoggerInterface {
+class JavaAgentLogger(private val logger: Logger) : AgentLoggerInterface {
     override fun info(message: String) {
         logger.info(message)
     }

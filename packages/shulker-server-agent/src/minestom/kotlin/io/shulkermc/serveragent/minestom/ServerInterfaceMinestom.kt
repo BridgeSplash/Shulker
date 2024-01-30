@@ -16,16 +16,15 @@ import java.time.Duration
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
-class ServerInterfaceMinestom(private val plugin: ShulkerServerAgentMinestom): ServerInterface {
+class ServerInterfaceMinestom(private val plugin: ShulkerServerAgentMinestom) : ServerInterface {
 
     private val eventNode: EventNode<Event> = EventNode.all("shulker-server-agent-minestom")
-
 
     override fun prepareNetworkAdminsPermissions(playerIds: List<UUID>) {
         eventNode.addListener(PlayerSpawnEvent::class.java) { event ->
             if (event.player.uuid in playerIds) {
                 event.player.permissionLevel = 4
-                event.player.addPermission(Permission("*"));
+                event.player.addPermission(Permission("*"))
             }
         }
     }
@@ -52,7 +51,8 @@ class ServerInterfaceMinestom(private val plugin: ShulkerServerAgentMinestom): S
         runnable: Runnable
     ): ServerInterface.ScheduledTask {
         val duration = Duration.ofNanos(timeUnit.toNanos(delay))
-        val task = MinecraftServer.getSchedulerManager().scheduleTask(runnable,
+        val task = MinecraftServer.getSchedulerManager().scheduleTask(
+            runnable,
             TaskSchedule.duration(duration),
             TaskSchedule.stop()
         )
@@ -67,7 +67,8 @@ class ServerInterfaceMinestom(private val plugin: ShulkerServerAgentMinestom): S
     ): ServerInterface.ScheduledTask {
         val delayDuration = Duration.ofNanos(timeUnit.toNanos(delay))
         val intervalDuration = Duration.ofNanos(timeUnit.toNanos(interval))
-        val task = MinecraftServer.getSchedulerManager().scheduleTask(runnable,
+        val task = MinecraftServer.getSchedulerManager().scheduleTask(
+            runnable,
             TaskSchedule.duration(delayDuration),
             TaskSchedule.duration(intervalDuration)
         )

@@ -378,11 +378,15 @@ impl<'a> FleetBuilder {
                 value: Some(spec.version.channel.to_string()),
                 ..EnvVar::default()
             },
-            EnvVar{
+            EnvVar {
                 name: "SHULKER_PLUGIN_FOLDER_LOCATION".to_string(),
-                value: Some(plugins_folder_location.clone().unwrap_or("plugins".to_string())),
+                value: Some(
+                    plugins_folder_location
+                        .clone()
+                        .unwrap_or("plugins".to_string()),
+                ),
                 ..EnvVar::default()
-            }
+            },
         ];
 
         if !plugin_urls.is_empty() {

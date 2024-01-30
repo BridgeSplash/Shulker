@@ -9,8 +9,6 @@ import io.shulkermc.serveragent.services.PlayerMovementService
 import io.shulkermc.serveragent.tasks.HealthcheckTask
 import java.lang.Exception
 import java.util.concurrent.TimeUnit
-import java.util.logging.Level
-import java.util.logging.Logger
 import kotlin.system.exitProcess
 
 class ShulkerServerAgentCommon(val serverInterface: ServerInterface, val logger: AgentLoggerInterface) {

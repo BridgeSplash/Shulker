@@ -176,8 +176,6 @@ subprojects {
                 }
             }
         }
-
-
     }
 
     fun registerPluginProvider(providerName: String, commonSourceSet: SourceSet) {

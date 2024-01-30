@@ -3,8 +3,7 @@ package io.shulkermc.serveragent.minestom.logger
 import io.shulkermc.serveragent.logger.AgentLoggerInterface
 import org.slf4j.Logger
 
-class SLF4JAgentLogger(private val logger: Logger): AgentLoggerInterface {
-
+class SLF4JAgentLogger(private val logger: Logger) : AgentLoggerInterface {
 
     override fun info(message: String) {
         logger.info(message)

@@ -66,7 +66,7 @@ pub enum MinecraftServerVersion {
     #[default]
     Paper,
     Folia,
-    Minestom
+    Minestom,
 }
 
 #[derive(Deserialize, Serialize, Clone, Debug, Default, JsonSchema)]

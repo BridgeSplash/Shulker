@@ -351,11 +351,15 @@ impl<'a> GameServerBuilder {
                 value: Some(spec.version.channel.to_string()),
                 ..EnvVar::default()
             },
-            EnvVar{
+            EnvVar {
                 name: "SHULKER_SERVER_PLUGIN_FOLDER_LOCATION".to_string(),
-                value: Some(plugin_folder_location.clone().unwrap_or("plugins".to_string())),
+                value: Some(
+                    plugin_folder_location
+                        .clone()
+                        .unwrap_or("plugins".to_string()),
+                ),
                 ..EnvVar::default()
-            }
+            },
         ];
 
         if let Some(world) = &spec.config.world {

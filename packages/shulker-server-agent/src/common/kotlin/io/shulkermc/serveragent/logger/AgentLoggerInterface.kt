@@ -11,7 +11,4 @@ interface AgentLoggerInterface {
     fun severe(message: String, exception: Throwable)
 
     fun debug(message: String)
-
-
-
 }

@@ -35,7 +35,7 @@ pub async fn get_agent_plugin_url(
                         repository_url: agent_config.maven_repository.clone(),
                         group_id: "io.shulkermc".to_string(),
                         artifact_id: side.get_artifact_name().to_string(),
-                        version: "0.6.0".to_string(),//agent_config.version.clone(),
+                        version: "0.6.0".to_string(), //agent_config.version.clone(),
                         classifier: Some(platform),
                         credentials_secret_name: None,
                     }),

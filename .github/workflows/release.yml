@@ -53,7 +53,6 @@ jobs:
         env:
           DOCKER_BUILD_PLATFORMS: linux/amd64,linux/arm64/v8
 
-
   release:
     runs-on: ubuntu-latest
 
@@ -121,3 +120,72 @@ jobs:
           path: kube/helm/shulker-operator-*.tgz
           if-no-files-found: error
           retention-days: 1
+
+  plugins:
+    runs-on: ubuntu-latest
+    needs: release
+
+    steps:
+      - name: Checkout project sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: "17"
+          distribution: "adopt"
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Prepare Git boundaries for affected projects
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Build and package
+        run: |
+          ./gradlew build
+          VERSION=$(./gradlew properties -q | grep "version:" | awk '{print $2}')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.VERSION }}
+          release_name: Release ${{ env.VERSION }}
+          draft: false
+          prerelease: false
+
+      - name: Upload shulker-server-agent Release Asset
+        id: upload-release-asset-server-agent
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: |
+            ./dist/java/packages/shulker-server-agent/libs/shulker-server-agent-${{ env.VERSION }}-minestom.jar
+            ./dist/java/packages/shulker-server-agent/libs/shulker-server-agent-${{ env.VERSION }}-paper.jar
+          asset_name: |
+            shulker-server-agent-${{ env.VERSION }}-minestom.jar
+            shulker-server-agent-${{ env.VERSION }}-paper.jar
+          asset_content_type: application/java-archive
+
+      - name: Upload shulker-proxy-agent Release Asset
+        id: upload-release-asset-proxy-agent
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: |
+            ./dist/java/packages/shulker-proxy-agent/libs/shulker-proxy-agent-${{ env.VERSION }}-bungeecord.jar
+            ./dist/java/packages/shulker-proxy-agent/libs/shulker-proxy-agent-${{ env.VERSION }}-velocity.jar
+          asset_name: |
+            shulker-proxy-agent-${{ env.VERSION }}-bungeecord.jar
+            shulker-proxy-agent-${{ env.VERSION }}-velocity.jar
+          asset_content_type: application/java-archive
