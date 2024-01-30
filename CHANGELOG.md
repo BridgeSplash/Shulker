@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/bridgesplash/Shulker/compare/v1.0.1...v1.0.2) (2024-01-30)
+
+
+### :bug: Bug Fixes :bug:
+
+* add gradle-wrapper.jar ([b06ae64](https://github.com/bridgesplash/Shulker/commit/b06ae645b2ea66063ff7fb9665010f4d3d6339df))
+* add plugin folder location to fixtures.rs ([85b8678](https://github.com/bridgesplash/Shulker/commit/85b867827977ea1fa47a891a5087fc115553f320))
+
 ## [1.0.1](https://github.com/bridgesplash/Shulker/compare/v1.0.0...v1.0.1) (2024-01-30)
 
 
