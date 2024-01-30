@@ -47,6 +47,7 @@ lazy_static! {
                     url: Some("https://example.com/my_patch.tar.gz".to_string()),
                     ..ResourceRefSpec::default()
                 }]),
+                plugin_folder_location: Some("plugins".to_string()),
                 max_players: 42,
                 disable_nether: false,
                 disable_end: true,
