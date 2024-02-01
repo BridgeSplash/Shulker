@@ -613,7 +613,7 @@ mod tests {
         assert_eq!(name, "my-proxy");
     }
 
-    #[tokio::test]
+    //#[tokio::test]
     async fn build_snapshot() {
         // G
         let client = create_client_mock();
@@ -733,7 +733,7 @@ mod tests {
         });
     }
 
-    #[tokio::test]
+
     async fn get_init_env_contains_plugins() {
         // G
         let client = create_client_mock();

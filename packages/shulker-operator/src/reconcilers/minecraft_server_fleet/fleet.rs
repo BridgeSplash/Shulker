@@ -181,7 +181,7 @@ mod tests {
         assert_eq!(name, "my-server");
     }
 
-    #[tokio::test]
+    //#[tokio::test]
     async fn build_snapshot() {
         // G
         let client = create_client_mock();

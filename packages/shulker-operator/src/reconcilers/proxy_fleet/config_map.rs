@@ -346,6 +346,7 @@ mod bungeecord {
                 max_players: 100,
                 motd: "A Motd".to_string(),
                 server_icon: "A Server Icon".to_string(),
+                plugin_folder_location: Some("plugins".to_string()),
                 proxy_protocol: true,
                 ttl_seconds: 300,
             };
@@ -550,6 +551,7 @@ mod velocity {
                 max_players: 100,
                 motd: "A Motd".to_string(),
                 server_icon: "A Server Icon".to_string(),
+                plugin_folder_location: Some("plugins".to_string()),
                 proxy_protocol: true,
                 ttl_seconds: 300,
             };

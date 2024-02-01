@@ -132,6 +132,8 @@ spec:
                   value: /data
                 - name: SHULKER_VERSION_CHANNEL
                   value: Paper
+                - name: SHULKER_SERVER_PLUGIN_FOLDER_LOCATION
+                  value: plugins
                 - name: SHULKER_SERVER_WORLD_URL
                   value: "https://example.com/my_world.tar.gz"
                 - name: SHULKER_SERVER_PLUGIN_URLS
