@@ -1,3 +1,14 @@
+## [1.0.3](https://github.com/bridgesplash/Shulker/compare/v1.0.2...v1.0.3) (2024-02-03)
+
+
+### :bug: Bug Fixes :bug:
+
+* **deps:** update dependency com.google.api.grpc:proto-google-common-protos to v2.31.0 ([#383](https://github.com/bridgesplash/Shulker/issues/383)) ([0dfc375](https://github.com/bridgesplash/Shulker/commit/0dfc3750722a580373305c7470de9f0ab2c50272))
+* **deps:** update dependency net.md-5:bungeecord-api to v1.20-r0.2 ([#386](https://github.com/bridgesplash/Shulker/issues/386)) ([7d96f9b](https://github.com/bridgesplash/Shulker/commit/7d96f9b423a859c4857ab6b94229df857e563056))
+* formatting, plugin auto publish ([531dbb2](https://github.com/bridgesplash/Shulker/commit/531dbb2511083a0f94182406c07b5be95bd99ef6))
+* remove certain test for version compatibility ([49fd0b5](https://github.com/bridgesplash/Shulker/commit/49fd0b53a723e307e8d26abc82c3e7e06b9f3fb7))
+* **shulker-operator:** set velocity config file version to 2.6 to avoid motd migration ([40b90fc](https://github.com/bridgesplash/Shulker/commit/40b90fc8ff2ca3eb640b47e3fd104a7eacd48e7d))
+
 ## [1.0.2](https://github.com/bridgesplash/Shulker/compare/v1.0.1...v1.0.2) (2024-01-30)
 
 
