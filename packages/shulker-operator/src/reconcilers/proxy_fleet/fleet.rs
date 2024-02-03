@@ -733,7 +733,6 @@ mod tests {
         });
     }
 
-
     async fn get_init_env_contains_plugins() {
         // G
         let client = create_client_mock();
