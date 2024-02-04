@@ -144,7 +144,7 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Prepare for build (generate protobuf, etc.)
-        run: npm run prepare
+        run: npm run proto:build
 
       - name: Build and package
         run: |
