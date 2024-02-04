@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/bridgesplash/Shulker/compare/v1.0.8...v1.0.9) (2024-02-04)
+
+
+### :bug: Bug Fixes :bug:
+
+* require release for plugins github action [skip ci] ([fcd24f7](https://github.com/bridgesplash/Shulker/commit/fcd24f739d99868bb05d817d036119f4a4ba61ab))
+
 ## [1.0.8](https://github.com/bridgesplash/Shulker/compare/v1.0.7...v1.0.8) (2024-02-04)
 
 
