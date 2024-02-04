@@ -1,3 +1,11 @@
+## [1.0.7](https://github.com/bridgesplash/Shulker/compare/v1.0.6...v1.0.7) (2024-02-04)
+
+
+### :bug: Bug Fixes :bug:
+
+* only run proto:build for pre-building ([71fa5ca](https://github.com/bridgesplash/Shulker/commit/71fa5cada2690f8e8bfbea83e96f8884d3dbbec5))
+* use correct health.sh in snapshot ([43de592](https://github.com/bridgesplash/Shulker/commit/43de592e0ea17e709252f21fb19c2b3e5a37bed2))
+
 ## [1.0.6](https://github.com/bridgesplash/Shulker/compare/v1.0.5...v1.0.6) (2024-02-04)
 
 
