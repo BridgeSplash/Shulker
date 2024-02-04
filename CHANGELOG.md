@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/bridgesplash/Shulker/compare/v1.0.5...v1.0.6) (2024-02-04)
+
+
+### :bug: Bug Fixes :bug:
+
+* ensure Minestom option in crds ([e3bcae6](https://github.com/bridgesplash/Shulker/commit/e3bcae6dc0b10c8bb468e18f0e4a4072e6380a16))
+* run npm prepare before building plugins ([d0ec687](https://github.com/bridgesplash/Shulker/commit/d0ec687ee49e596fe7c0e9502a7c3f8c5949da7c))
+
 ## [1.0.5](https://github.com/bridgesplash/Shulker/compare/v1.0.4...v1.0.5) (2024-02-04)
 
 
