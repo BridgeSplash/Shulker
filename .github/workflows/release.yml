@@ -143,6 +143,9 @@ jobs:
       - name: Prepare Git boundaries for affected projects
         uses: nrwl/nx-set-shas@v4
 
+      - name: Prepare for build (generate protobuf, etc.)
+        run: npm run prepare
+
       - name: Build and package
         run: |
           ./gradlew build
