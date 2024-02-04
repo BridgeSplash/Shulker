@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/bridgesplash/Shulker/compare/v1.0.3...v1.0.4) (2024-02-04)
+
+
+### :bug: Bug Fixes :bug:
+
+* health check issue, with pinging 1.20.3 ([e52e624](https://github.com/bridgesplash/Shulker/commit/e52e6244358d90cb3992e9afd9f2e5fd27116448))
+
 ## [1.0.3](https://github.com/bridgesplash/Shulker/compare/v1.0.2...v1.0.3) (2024-02-03)
 
 
