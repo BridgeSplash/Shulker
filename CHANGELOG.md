@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/bridgesplash/Shulker/compare/v1.0.7...v1.0.8) (2024-02-04)
+
+
+### :bug: Bug Fixes :bug:
+
+* install tools for plugins release ([ecc8734](https://github.com/bridgesplash/Shulker/commit/ecc8734808ea8db42c035ca2bdb3e0ebf65b87a2))
+* run plugins individually [skip ci] ([149b77f](https://github.com/bridgesplash/Shulker/commit/149b77fb4b2b9658813c764526318f91b6b6b26e))
+
 ## [1.0.7](https://github.com/bridgesplash/Shulker/compare/v1.0.6...v1.0.7) (2024-02-04)
 
 
