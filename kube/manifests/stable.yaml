@@ -2267,6 +2267,7 @@ spec:
                               enum:
                                 - Paper
                                 - Folia
+                                - Minestom
                               type: string
                             customJar:
                               description: Reference to a server JAR file to download and use instead of the built-in one
@@ -4330,6 +4331,7 @@ spec:
                       enum:
                         - Paper
                         - Folia
+                        - Minestom
                       type: string
                     customJar:
                       description: Reference to a server JAR file to download and use instead of the built-in one
