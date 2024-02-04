@@ -123,6 +123,7 @@ jobs:
 
   plugins:
     runs-on: ubuntu-latest
+    needs: release
 
     env:
       IS_RELEASE: "true"
