@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/bridgesplash/Shulker/compare/v1.0.4...v1.0.5) (2024-02-04)
+
+
+### :bug: Bug Fixes :bug:
+
+* use correct location for health.sh ([7f0e4ce](https://github.com/bridgesplash/Shulker/commit/7f0e4cecc2a6d38c17259ceaa32f710c56931f68))
+
 ## [1.0.4](https://github.com/bridgesplash/Shulker/compare/v1.0.3...v1.0.4) (2024-02-04)
 
 
