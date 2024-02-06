@@ -136,6 +136,13 @@ jobs:
           VERSION=$(./gradlew properties -q | grep "version:" | awk '{print $2}')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
+      - name: Debugging
+        run: |
+          echo $VERSION
+          pwd
+          ls -la ./dist/java/packages/shulker-server-agent/libs
+          ls -la ./dist/java/packages/shulker-proxy-agent/libs
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
