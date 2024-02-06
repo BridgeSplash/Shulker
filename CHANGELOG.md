@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/bridgesplash/Shulker/compare/v1.1.1...v1.1.2) (2024-02-06)
+
+
+### :bug: Bug Fixes :bug:
+
+* unique build script for java plugins [skip ci] ([9ac334f](https://github.com/bridgesplash/Shulker/commit/9ac334f6b146175e7729d9f26dc0f8b882fe1678))
+
 ## [1.1.1](https://github.com/bridgesplash/Shulker/compare/v1.1.0...v1.1.1) (2024-02-06)
 
 
