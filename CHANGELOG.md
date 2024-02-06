@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/bridgesplash/Shulker/compare/v1.1.0...v1.1.1) (2024-02-06)
+
+
+### :bug: Bug Fixes :bug:
+
+* release builds using npm ([c29f1e4](https://github.com/bridgesplash/Shulker/commit/c29f1e4ef9335bae2e26727ac6a437c8af385964))
+* remove unused variable ([7c0e18f](https://github.com/bridgesplash/Shulker/commit/7c0e18f33e4b0d7cd4c98b2073fa6e845f02098f))
+
 ## [1.1.0](https://github.com/bridgesplash/Shulker/compare/v1.0.12...v1.1.0) (2024-02-06)
 
 
