@@ -48,7 +48,6 @@ use shulker_kube_utils::reconcilers::builder::ResourceBuilder;
 use super::config_map::ConfigMapBuilder;
 use super::ProxyFleetReconciler;
 
-const PROXY_IMAGE: &str = "itzg/bungeecord:latest";
 const PROXY_SHULKER_CONFIG_DIR: &str = "/mnt/shulker/config";
 const PROXY_SHULKER_FORWARDING_SECRET_DIR: &str = "/mnt/shulker/forwarding-secret";
 const PROXY_DATA_DIR: &str = "/server";
