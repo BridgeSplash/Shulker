@@ -1,3 +1,11 @@
+## [1.0.12](https://github.com/bridgesplash/Shulker/compare/v1.0.11...v1.0.12) (2024-02-06)
+
+
+### :bug: Bug Fixes :bug:
+
+* debugging release.yml gh action [skip ci] ([941bcda](https://github.com/bridgesplash/Shulker/commit/941bcda7bf4f21d9236c92730b70cc43e8e35f20))
+* debugging release.yml gh action [skip ci] ([90e96e2](https://github.com/bridgesplash/Shulker/commit/90e96e26a3d2cfc03a20fc4192e19214b6102ea7))
+
 ## [1.0.11](https://github.com/bridgesplash/Shulker/compare/v1.0.10...v1.0.11) (2024-02-06)
 
 
