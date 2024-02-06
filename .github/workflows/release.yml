@@ -103,17 +103,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release with semantic-release
-        run: |
-          npx semantic-release
-          pwd
-          ls -la ./
-          ls -la ./dist
-          ls -la ./dist/java
-          ls -la ./dist/java/packages
-          ls -la ./dist/java/packages/shulker-server-agent
-          ls -la ./dist/java/packages/shulker-proxy-agent
-          ls -la ./dist/java/packages/shulker-server-agent/libs
-          ls -la ./dist/java/packages/shulker-proxy-agent/libs
+        run: npx semantic-release
         env:
           HUSKY: "0"
           DOCKER_BUILD_PLATFORMS: linux/amd64,linux/arm64/v8
@@ -137,20 +127,17 @@ jobs:
       - name: Prepare Git boundaries for affected projects
         uses: nrwl/nx-set-shas@v4
 
-      - name: Debugging
+      - name: Build and set Version
         run: |
-          pwd
-          ls -la ./dist/java/packages/shulker-server-agent/libs
-          ls -la ./dist/java/packages/shulker-proxy-agent/libs
-
-      - name: Prepare for build (generate protobuf, etc.)
-        run: npm run proto:build
-
-      - name: Build and package
-        run: |
-          ./gradlew build
+          npm run proto:build
+          npm run build
           VERSION=$(./gradlew properties -q | grep "version:" | awk '{print $2}')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Debugging
+        run: |
+          ls -la ./dist/java/packages/shulker-server-agent/libs
+          ls -la ./dist/java/packages/shulker-proxy-agent/libs
 
       - name: Create Release
         id: create_release
