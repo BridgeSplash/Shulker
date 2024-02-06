@@ -130,7 +130,7 @@ jobs:
       - name: Build and set Version
         run: |
           npm run proto:build
-          npm run build
+          npm run build:java
           VERSION=$(./gradlew properties -q | grep "version:" | awk '{print $2}')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 

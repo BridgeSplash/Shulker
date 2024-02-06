@@ -12,6 +12,7 @@
   "scripts": {
     "prepare": "husky install && npm run proto:build",
     "build": "nx run-many --target=build --all",
+    "build:java": "nx run-many --targets=build -p shulker-server-api shulker-proxy-api shulker-server-agent shulker-proxy-agent",
     "test": "nx run-many --target=test --all",
     "format": "prettier --ignore-unknown --write '**/*'",
     "lint": "nx run-many --target=lint --all",
