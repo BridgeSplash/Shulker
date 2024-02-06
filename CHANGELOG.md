@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/bridgesplash/Shulker/compare/v1.0.10...v1.0.11) (2024-02-06)
+
+
+### :bug: Bug Fixes :bug:
+
+* merge plugins and release gh action [skip ci] ([feb9d08](https://github.com/bridgesplash/Shulker/commit/feb9d0865e64716c514e00bf98ec70581b4a1c83))
+
 ## [1.0.10](https://github.com/bridgesplash/Shulker/compare/v1.0.9...v1.0.10) (2024-02-04)
 
 
