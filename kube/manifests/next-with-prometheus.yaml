@@ -487,6 +487,13 @@ spec:
                               description: Name of an optional ConfigMap already containing the server configuration
                               nullable: true
                               type: string
+                            lifecycleStrategy:
+                              default: AllocateWhenNotEmpty
+                              description: Strategy to apply concerning Agones `GameServer` lifecycle management
+                              enum:
+                                - AllocateWhenNotEmpty
+                                - Manual
+                              type: string
                             maxPlayers:
                               default: 20
                               description: Number of maximum players that can connect to the MinecraftServer Deployment
@@ -2546,6 +2553,13 @@ spec:
                     existingConfigMapName:
                       description: Name of an optional ConfigMap already containing the server configuration
                       nullable: true
+                      type: string
+                    lifecycleStrategy:
+                      default: AllocateWhenNotEmpty
+                      description: Strategy to apply concerning Agones `GameServer` lifecycle management
+                      enum:
+                        - AllocateWhenNotEmpty
+                        - Manual
                       type: string
                     maxPlayers:
                       default: 20
@@ -4887,6 +4901,12 @@ spec:
                                 type: object
                               nullable: true
                               type: array
+                            playersDeltaBeforeExclusion:
+                              default: 15
+                              description: Number of player slots to reserve when exclusing a proxy from the load balancer. This will allow load balancer implementations to update itself while still being able to accept some players
+                              format: uint32
+                              minimum: 0.0
+                              type: integer
                             plugins:
                               description: List of references to plugins to download
                               items:
@@ -6039,7 +6059,7 @@ spec:
       serviceAccountName: shulker-addon-matchmaking
       containers:
         - name: shulker-addon-matchmaking-director
-          image: "ghcr.io/jeremylvln/shulker-addon-matchmaking:next"
+          image: "ghcr.io/bridgesplash/shulker-addon-matchmaking:next"
           imagePullPolicy: Always
           args:
             - --metrics-bind-address=0.0.0.0:8080
@@ -6138,7 +6158,7 @@ spec:
       serviceAccountName: shulker-addon-matchmaking
       containers:
         - name: shulker-addon-matchmaking-mmf
-          image: "ghcr.io/jeremylvln/shulker-addon-matchmaking:next"
+          image: "ghcr.io/bridgesplash/shulker-addon-matchmaking:next"
           imagePullPolicy: Always
           command: ["/shulker-addon-matchmaking-mmf"]
           args:

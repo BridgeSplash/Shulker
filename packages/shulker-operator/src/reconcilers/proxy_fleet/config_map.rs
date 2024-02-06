@@ -349,6 +349,7 @@ mod bungeecord {
                 plugin_folder_location: Some("plugins".to_string()),
                 proxy_protocol: true,
                 ttl_seconds: 300,
+                players_delta_before_exclusion: 15,
             };
             let service_spec = Some(ProxyFleetServiceSpec {
                 type_: ProxyFleetServiceType::LoadBalancer,
@@ -554,6 +555,7 @@ mod velocity {
                 plugin_folder_location: Some("plugins".to_string()),
                 proxy_protocol: true,
                 ttl_seconds: 300,
+                players_delta_before_exclusion: 15,
             };
             let service_spec = Some(ProxyFleetServiceSpec {
                 type_: ProxyFleetServiceType::LoadBalancer,

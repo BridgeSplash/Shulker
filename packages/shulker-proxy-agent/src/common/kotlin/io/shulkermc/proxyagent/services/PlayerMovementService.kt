@@ -18,6 +18,7 @@ class PlayerMovementService(private val agent: ShulkerProxyAgentCommon) {
         private const val LIMBO_TAG = "limbo"
 
         private const val ONLINE_PLAYERS_COUNT_MEMOIZE_SECONDS = 10L
+        private const val PLAYER_CAPACITY_COUNT_MEMOIZE_SECONDS = 60L
 
         private val MSG_NOT_ACCEPTING_PLAYERS = createDisconnectMessage(
             "Proxy is not accepting players, try reconnect.",
@@ -30,11 +31,21 @@ class PlayerMovementService(private val agent: ShulkerProxyAgentCommon) {
         )
     }
 
+    private val maxPlayersWithExclusionDelta =
+        this.agent.proxyInterface.getPlayerCapacity() - Configuration.PROXY_PLAYER_DELTA_BEFORE_EXCLUSION
+
     private val onlinePlayerCountSupplier = Suppliers.memoizeWithExpiration(
         { this.agent.cache.countOnlinePlayers() },
         ONLINE_PLAYERS_COUNT_MEMOIZE_SECONDS,
         java.util.concurrent.TimeUnit.SECONDS
     )
+    private val playerCapacityCountSupplier = Suppliers.memoizeWithExpiration(
+        { this.agent.cache.countPlayerCapacity() },
+        PLAYER_CAPACITY_COUNT_MEMOIZE_SECONDS,
+        java.util.concurrent.TimeUnit.SECONDS
+    )
+
+    private var isAllocatedByAgones = false
     private var acceptingPlayers = true
 
     init {
@@ -50,29 +61,50 @@ class PlayerMovementService(private val agent: ShulkerProxyAgentCommon) {
         this.acceptingPlayers = acceptingPlayers
 
         if (acceptingPlayers) {
+            this.agent.fileSystem.deleteReadinessLock()
             this.agent.logger.info("Proxy is now accepting players")
         } else {
+            this.agent.fileSystem.createReadinessLock()
             this.agent.logger.info("Proxy is no longer accepting players")
         }
     }
 
     private fun onProxyPing(): ProxyPingHookResult {
-        return ProxyPingHookResult(this.onlinePlayerCountSupplier.get())
+        return ProxyPingHookResult(this.onlinePlayerCountSupplier.get(), this.playerCapacityCountSupplier.get())
     }
 
     private fun onPlayerPreLogin(): PlayerPreLoginHookResult {
         if (!this.acceptingPlayers) {
             return PlayerPreLoginHookResult.disallow(MSG_NOT_ACCEPTING_PLAYERS)
         }
+
         return PlayerPreLoginHookResult.allow()
     }
 
     private fun onPlayerLogin(player: Player) {
         this.agent.cache.updateCachedPlayerName(player.uniqueId, player.name)
+
+        if (!this.isAllocatedByAgones) {
+            this.isAllocatedByAgones = true
+            this.agent.agonesGateway.setAllocated()
+        }
+
+        if (this.isProxyConsideredFull()) {
+            this.setAcceptingPlayers(false)
+        }
     }
 
     private fun onPlayerDisconnect(player: Player) {
         this.agent.cache.unsetPlayerPosition(player.uniqueId)
+
+        if (this.isAllocatedByAgones && this.agent.proxyInterface.getPlayerCount() == 0) {
+            this.isAllocatedByAgones = false
+            this.agent.agonesGateway.setReady()
+        }
+
+        if (!this.isProxyConsideredFull()) {
+            this.setAcceptingPlayers(true)
+        }
     }
 
     private fun onServerPreConnect(player: Player, originalServerName: String): ServerPreConnectHookResult {
@@ -97,5 +129,9 @@ class PlayerMovementService(private val agent: ShulkerProxyAgentCommon) {
 
     private fun onServerPostConnect(player: Player, serverName: String) {
         this.agent.cache.setPlayerPosition(player.uniqueId, Configuration.PROXY_NAME, serverName)
+    }
+
+    private fun isProxyConsideredFull(): Boolean {
+        return this.agent.proxyInterface.getPlayerCount() >= this.maxPlayersWithExclusionDelta
     }
 }

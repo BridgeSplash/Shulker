@@ -105,6 +105,13 @@ jobs:
       - name: Release with semantic-release
         run: |
           npx semantic-release
+          pwd
+          ls -la ./
+          ls -la ./dist
+          ls -la ./dist/java
+          ls -la ./dist/java/packages
+          ls -la ./dist/java/packages/shulker-server-agent
+          ls -la ./dist/java/packages/shulker-proxy-agent
           ls -la ./dist/java/packages/shulker-server-agent/libs
           ls -la ./dist/java/packages/shulker-proxy-agent/libs
         env:

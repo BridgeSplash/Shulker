@@ -31,6 +31,7 @@ use shulker_crds::v1alpha1::proxy_fleet::ProxyFleetTemplateVersion;
 use url::Url;
 
 use crate::agent::AgentConfig;
+use crate::constants;
 use crate::reconcilers::agent::get_agent_plugin_url;
 use crate::reconcilers::agent::AgentSide;
 use crate::reconcilers::redis_ref::RedisRef;
@@ -205,7 +206,7 @@ impl<'a> FleetBuilder {
                 ..Container::default()
             }]),
             containers: vec![Container {
-                image: Some(PROXY_IMAGE.to_string()),
+                image: Some(constants::PROXY_IMAGE.to_string()),
                 name: "proxy".to_string(),
                 ports: Some(vec![ContainerPort {
                     name: Some("minecraft".to_string()),
@@ -456,6 +457,11 @@ impl<'a> FleetBuilder {
             EnvVar {
                 name: "SHULKER_PROXY_TTL_SECONDS".to_string(),
                 value: Some(spec.config.ttl_seconds.to_string()),
+                ..EnvVar::default()
+            },
+            EnvVar {
+                name: "SHULKER_PROXY_PLAYER_DELTA_BEFORE_EXCLUSION".to_string(),
+                value: Some(spec.config.players_delta_before_exclusion.to_string()),
                 ..EnvVar::default()
             },
             EnvVar {
