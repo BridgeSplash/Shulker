@@ -139,17 +139,6 @@ jobs:
           ls -la ./dist/java/packages/shulker-server-agent/libs
           ls -la ./dist/java/packages/shulker-proxy-agent/libs
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.VERSION }}
-          release_name: Release ${{ env.VERSION }}
-          draft: false
-          prerelease: false
-
       - name: Upload shulker-server-agent Release Asset
         id: upload-release-asset-server-agent
         uses: softprops/action-gh-release@v1
