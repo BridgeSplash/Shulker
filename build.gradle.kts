@@ -234,6 +234,7 @@ subprojects {
             "commonCompileOnly"(libs.adventure.api)
             "paperCompileOnly"(libs.folia.api)
             "minestomCompileOnly"(libs.minestom.api)
+            "minestomCompileOnly"(libs.minestom.api.extension)
         }
     }
 }

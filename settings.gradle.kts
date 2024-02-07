@@ -25,6 +25,7 @@ dependencyResolutionManagement {
             library("protobuf", "com.google.protobuf:protobuf-java:3.25.2")
             library("velocity-api", "com.velocitypowered:velocity-api:3.1.1")
             library("minestom-api", "dev.hollowcube:minestom-ce:1554487748")
+            library("minestom-api-extension", "dev.hollowcube:minestom-ce-extensions:1.2.0")
 
             plugin("buildconfig", "com.github.gmazzo.buildconfig").version("4.1.2")
             plugin("shadow", "com.github.johnrengelman.shadow").version("8.1.0")
