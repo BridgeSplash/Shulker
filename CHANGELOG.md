@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/bridgesplash/Shulker/compare/v1.1.4...v1.1.5) (2024-02-07)
+
+
+### :bug: Bug Fixes :bug:
+
+* remove unneeded action from release.yml [skip ci] ([ed474c4](https://github.com/bridgesplash/Shulker/commit/ed474c41a32695db30a82a3fa1f6a9cfe3884bc6))
+* use softprops release gh script for release action [skip ci] ([0c57a15](https://github.com/bridgesplash/Shulker/commit/0c57a15c3548f3164c85031d304f71874e7b2fd3))
+
 ## [1.1.4](https://github.com/bridgesplash/Shulker/compare/v1.1.3...v1.1.4) (2024-02-07)
 
 
