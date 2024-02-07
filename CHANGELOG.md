@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/bridgesplash/Shulker/compare/v1.1.3...v1.1.4) (2024-02-07)
+
+
+### :bug: Bug Fixes :bug:
+
+* use minestom-ce not minestom [skip ci] ([49f2ef7](https://github.com/bridgesplash/Shulker/commit/49f2ef7429efb85b72fb0bb4db57a27f9f5cda06))
+
 ## [1.1.3](https://github.com/bridgesplash/Shulker/compare/v1.1.2...v1.1.3) (2024-02-06)
 
 
