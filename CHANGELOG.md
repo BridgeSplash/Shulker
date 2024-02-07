@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/bridgesplash/Shulker/compare/v1.1.5...v1.1.6) (2024-02-07)
+
+
+### :bug: Bug Fixes :bug:
+
+* invalid tag_name for release [skip ci] ([2f87b9b](https://github.com/bridgesplash/Shulker/commit/2f87b9b1e6aa26b3c6fc695b74cc70e93d8b6c06))
+
 ## [1.1.5](https://github.com/bridgesplash/Shulker/compare/v1.1.4...v1.1.5) (2024-02-07)
 
 
