@@ -143,7 +143,7 @@ jobs:
         id: upload-release-asset-server-agent
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: "${{ env.VERSION }}-server-agent"
+          tag_name: "${{ env.VERSION }}-shulker-server-agent"
           files: |
             ./dist/java/packages/shulker-server-agent/libs/shulker-server-agent-${{ env.VERSION }}-minestom.jar
             ./dist/java/packages/shulker-server-agent/libs/shulker-server-agent-${{ env.VERSION }}-paper.jar
@@ -152,7 +152,7 @@ jobs:
         id: upload-release-asset-proxy-agent
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: "${{ env.VERSION }}-proxy-agent"
+          tag_name: "${{ env.VERSION }}-shulker-proxy-agent"
           files: |
             ./dist/java/packages/shulker-proxy-agent/libs/shulker-proxy-agent-${{ env.VERSION }}-bungeecord.jar
             ./dist/java/packages/shulker-proxy-agent/libs/shulker-proxy-agent-${{ env.VERSION }}-velocity.jar

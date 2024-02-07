@@ -82,6 +82,15 @@ impl ResourceRefResolver {
                     classifier: maven_ref.classifier.clone(),
                     credentials,
                 });
+            } else if let Some(github_release_ref) = &url_from.github_release_ref {
+
+
+                return Ok(ResourceRef::GithubRelease {
+                    repository_url: github_release_ref.repository_url.clone(),
+                    artifact_id: github_release_ref.artifact_id.clone(),
+                    version: github_release_ref.version.clone(),
+                    classifier: github_release_ref.classifier.clone()
+                });
             }
         }
 
@@ -222,6 +231,7 @@ mod tests {
                     classifier: Some(classifier.clone()),
                     credentials_secret_name: None,
                 }),
+                ..ResourceRefFromSpec::default()
             }),
             ..ResourceRefSpec::default()
         };
@@ -287,6 +297,7 @@ mod tests {
                     classifier: Some(classifier.clone()),
                     credentials_secret_name: Some(credentials_secret.name_any()),
                 }),
+                ..ResourceRefFromSpec::default()
             }),
             ..ResourceRefSpec::default()
         };
@@ -340,6 +351,7 @@ mod tests {
                     classifier: Some(classifier.clone()),
                     credentials_secret_name: Some("not_existing_secret".to_string()),
                 }),
+                ..ResourceRefFromSpec::default()
             }),
             ..ResourceRefSpec::default()
         };

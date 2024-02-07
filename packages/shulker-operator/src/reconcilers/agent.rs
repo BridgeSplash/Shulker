@@ -1,4 +1,4 @@
-use shulker_crds::resourceref::{ResourceRefFromMavenSpec, ResourceRefFromSpec, ResourceRefSpec};
+use shulker_crds::resourceref::{ResourceRefFromGithubReleaseSpec, ResourceRefFromSpec, ResourceRefSpec};
 use url::Url;
 
 use crate::{
@@ -31,14 +31,13 @@ pub async fn get_agent_plugin_url(
             "shulker-system",
             &ResourceRefSpec {
                 url_from: Some(ResourceRefFromSpec {
-                    maven_ref: Some(ResourceRefFromMavenSpec {
-                        repository_url: agent_config.maven_repository.clone(),
-                        group_id: "io.shulkermc".to_string(),
+                    github_release_ref: Some(ResourceRefFromGithubReleaseSpec {
+                        repository_url: "bridgesplash/shulker".to_string(),
                         artifact_id: side.get_artifact_name().to_string(),
-                        version: "0.6.0".to_string(), //agent_config.version.clone(),
+                        version: agent_config.version.clone(),
                         classifier: Some(platform),
-                        credentials_secret_name: None,
                     }),
+                    ..ResourceRefFromSpec::default()
                 }),
                 ..ResourceRefSpec::default()
             },

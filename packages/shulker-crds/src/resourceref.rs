@@ -12,6 +12,16 @@ pub struct ResourceRefSpec {
 #[serde(rename_all = "camelCase")]
 pub struct ResourceRefFromSpec {
     pub maven_ref: Option<ResourceRefFromMavenSpec>,
+    pub github_release_ref: Option<ResourceRefFromGithubReleaseSpec>,
+}
+
+#[derive(Deserialize, Serialize, Clone, Debug, JsonSchema)]
+#[serde(rename_all = "camelCase")]
+pub struct ResourceRefFromGithubReleaseSpec {
+    pub repository_url: String,
+    pub artifact_id: String,
+    pub version: String,
+    pub classifier: Option<String>,
 }
 
 #[derive(Deserialize, Serialize, Clone, Debug, JsonSchema)]
