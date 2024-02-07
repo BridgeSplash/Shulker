@@ -152,30 +152,18 @@ jobs:
 
       - name: Upload shulker-server-agent Release Asset
         id: upload-release-asset-server-agent
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: |
+          tag_name: "Server Agent ${{ env.VERSION }}"
+          files: |
             ./dist/java/packages/shulker-server-agent/libs/shulker-server-agent-${{ env.VERSION }}-minestom.jar
             ./dist/java/packages/shulker-server-agent/libs/shulker-server-agent-${{ env.VERSION }}-paper.jar
-          asset_name: |
-            shulker-server-agent-${{ env.VERSION }}-minestom.jar
-            shulker-server-agent-${{ env.VERSION }}-paper.jar
-          asset_content_type: application/java-archive
 
       - name: Upload shulker-proxy-agent Release Asset
         id: upload-release-asset-proxy-agent
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: |
+          tag_name: "Proxy Agent ${{ env.VERSION }}"
+          files: |
             ./dist/java/packages/shulker-proxy-agent/libs/shulker-proxy-agent-${{ env.VERSION }}-bungeecord.jar
             ./dist/java/packages/shulker-proxy-agent/libs/shulker-proxy-agent-${{ env.VERSION }}-velocity.jar
-          asset_name: |
-            shulker-proxy-agent-${{ env.VERSION }}-bungeecord.jar
-            shulker-proxy-agent-${{ env.VERSION }}-velocity.jar
-          asset_content_type: application/java-archive
