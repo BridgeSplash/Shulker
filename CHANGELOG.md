@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/bridgesplash/Shulker/compare/v1.1.6...v1.2.0) (2024-02-07)
+
+
+### :sparkles: Features :sparkles:
+
+* add github release instead of maven [skip ci] ([d8f67c7](https://github.com/bridgesplash/Shulker/commit/d8f67c7e188efa855fe80f43db7505814bf79cee))
+
 ## [1.1.6](https://github.com/bridgesplash/Shulker/compare/v1.1.5...v1.1.6) (2024-02-07)
 
 
