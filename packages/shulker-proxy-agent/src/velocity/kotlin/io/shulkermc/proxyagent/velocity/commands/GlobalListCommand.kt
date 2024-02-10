@@ -49,6 +49,14 @@ object GlobalListCommand {
                         return@executes Command.SINGLE_SUCCESS
                     }
             )
+            .then(
+                LiteralArgumentBuilder.literal<CommandSource>("proxy")
+                    .executes { context ->
+                        val source = context.source
+                        ListCommandHandler.executeListOnProxies(agent, source)
+                        return@executes Command.SINGLE_SUCCESS
+                    }
+            )
             .build()
 
         return BrigadierCommand(rootNode)

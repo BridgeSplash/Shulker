@@ -4,6 +4,7 @@ import io.shulkermc.proxyagent.ShulkerProxyAgentCommon
 import net.kyori.adventure.audience.Audience
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
+import net.kyori.adventure.text.format.TextDecoration
 
 object ListCommandHandler {
     const val NAME = "glist"
@@ -31,5 +32,23 @@ object ListCommandHandler {
                     .append(Component.text(playerNamesJoined).color(NamedTextColor.WHITE))
             )
         }
+    }
+
+    fun executeListOnProxies(agent: ShulkerProxyAgentCommon, source: Audience) {
+        val message = Component.text("List of registered proxies: ", NamedTextColor.GRAY)
+
+        agent.cache.listRegisteredProxies().forEach {
+            message.append(
+                Component.text(it.proxyName).color(NamedTextColor.YELLOW).hoverEvent(
+                    Component.text("Proxy Info", NamedTextColor.YELLOW, TextDecoration.BOLD)
+                        .append(Component.newline())
+                        .append(Component.text("Last Seen: ${it.lastSeenMillis}").color(NamedTextColor.YELLOW))
+                        .append(Component.newline())
+                        .append(Component.text("Players Capacity: ${it.proxyCapacity}").color(NamedTextColor.YELLOW))
+                )
+            )
+        }
+
+        source.sendMessage(message)
     }
 }
