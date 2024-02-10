@@ -1,3 +1,11 @@
+## [1.3.0](https://github.com/bridgesplash/Shulker/compare/v1.2.0...v1.3.0) (2024-02-10)
+
+
+### :sparkles: Features :sparkles:
+
+* list proxies with glist command ([1599f54](https://github.com/bridgesplash/Shulker/commit/1599f5428710cdddddea5586d7765d88e17d0e66))
+* shutdown command for proxy ([cd9d529](https://github.com/bridgesplash/Shulker/commit/cd9d529c29c63cbc678dd9e0ba5ede0a5e0eb913))
+
 ## [1.2.0](https://github.com/bridgesplash/Shulker/compare/v1.1.6...v1.2.0) (2024-02-07)
 
 ### :sparkles: Features :sparkles:
