@@ -6,8 +6,8 @@ import net.kyori.adventure.text.format.TextColor
 import net.kyori.adventure.text.format.TextDecoration
 
 fun createDisconnectMessage(message: String, color: TextColor): Component =
-    Component.text("◆ Shulker ◆\n")
-        .color(NamedTextColor.LIGHT_PURPLE)
+    Component.text("◆ BridgeSplash ◆\n")
+        .color(NamedTextColor.GOLD)
         .decorate(TextDecoration.BOLD)
         .append(
             Component.text(message)
