@@ -10,6 +10,7 @@ import io.shulkermc.proxyagent.ShulkerProxyAgentCommon
 import io.shulkermc.proxyagent.VelocityBuildConfig
 import io.shulkermc.proxyagent.velocity.commands.GlobalFindCommand
 import io.shulkermc.proxyagent.velocity.commands.GlobalListCommand
+import io.shulkermc.proxyagent.velocity.commands.GlobalShutdownCommand
 import io.shulkermc.proxyagent.velocity.commands.GlobalTeleportCommand
 import java.util.logging.Logger
 
@@ -17,7 +18,7 @@ import java.util.logging.Logger
     id = "shulker-proxy-agent",
     name = "ShulkerProxyAgent",
     version = VelocityBuildConfig.VERSION,
-    authors = ["Jérémy Levilain <jeremy@jeremylvln.fr>"]
+    authors = ["TropicalShadow", "Jérémy Levilain <jeremy@jeremylvln.fr>"]
 )
 class ShulkerProxyAgentVelocity @Inject constructor(
     val proxy: ProxyServer,
@@ -32,6 +33,7 @@ class ShulkerProxyAgentVelocity @Inject constructor(
         GlobalListCommand.register(this)
         GlobalTeleportCommand.register(this)
         GlobalFindCommand.register(this)
+        GlobalShutdownCommand.register(this)
     }
 
     @Subscribe
