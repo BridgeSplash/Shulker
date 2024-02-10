@@ -1,66 +1,57 @@
 ## [1.2.0](https://github.com/bridgesplash/Shulker/compare/v1.1.6...v1.2.0) (2024-02-07)
 
-
 ### :sparkles: Features :sparkles:
 
-* add github release instead of maven [skip ci] ([d8f67c7](https://github.com/bridgesplash/Shulker/commit/d8f67c7e188efa855fe80f43db7505814bf79cee))
+- add github release instead of maven [skip ci] ([d8f67c7](https://github.com/bridgesplash/Shulker/commit/d8f67c7e188efa855fe80f43db7505814bf79cee))
 
 ## [1.1.6](https://github.com/bridgesplash/Shulker/compare/v1.1.5...v1.1.6) (2024-02-07)
 
-
 ### :bug: Bug Fixes :bug:
 
-* invalid tag_name for release [skip ci] ([2f87b9b](https://github.com/bridgesplash/Shulker/commit/2f87b9b1e6aa26b3c6fc695b74cc70e93d8b6c06))
+- invalid tag_name for release [skip ci] ([2f87b9b](https://github.com/bridgesplash/Shulker/commit/2f87b9b1e6aa26b3c6fc695b74cc70e93d8b6c06))
 
 ## [1.1.5](https://github.com/bridgesplash/Shulker/compare/v1.1.4...v1.1.5) (2024-02-07)
 
-
 ### :bug: Bug Fixes :bug:
 
-* remove unneeded action from release.yml [skip ci] ([ed474c4](https://github.com/bridgesplash/Shulker/commit/ed474c41a32695db30a82a3fa1f6a9cfe3884bc6))
-* use softprops release gh script for release action [skip ci] ([0c57a15](https://github.com/bridgesplash/Shulker/commit/0c57a15c3548f3164c85031d304f71874e7b2fd3))
+- remove unneeded action from release.yml [skip ci] ([ed474c4](https://github.com/bridgesplash/Shulker/commit/ed474c41a32695db30a82a3fa1f6a9cfe3884bc6))
+- use softprops release gh script for release action [skip ci] ([0c57a15](https://github.com/bridgesplash/Shulker/commit/0c57a15c3548f3164c85031d304f71874e7b2fd3))
 
 ## [1.1.4](https://github.com/bridgesplash/Shulker/compare/v1.1.3...v1.1.4) (2024-02-07)
 
-
 ### :bug: Bug Fixes :bug:
 
-* use minestom-ce not minestom [skip ci] ([49f2ef7](https://github.com/bridgesplash/Shulker/commit/49f2ef7429efb85b72fb0bb4db57a27f9f5cda06))
+- use minestom-ce not minestom [skip ci] ([49f2ef7](https://github.com/bridgesplash/Shulker/commit/49f2ef7429efb85b72fb0bb4db57a27f9f5cda06))
 
 ## [1.1.3](https://github.com/bridgesplash/Shulker/compare/v1.1.2...v1.1.3) (2024-02-06)
 
-
 ### :bug: Bug Fixes :bug:
 
-* use minestom-ce not minestom [skip ci] ([4b24de4](https://github.com/bridgesplash/Shulker/commit/4b24de4812dacc4cfc4c0257c7ebbfd18636f7ec))
+- use minestom-ce not minestom [skip ci] ([4b24de4](https://github.com/bridgesplash/Shulker/commit/4b24de4812dacc4cfc4c0257c7ebbfd18636f7ec))
 
 ## [1.1.2](https://github.com/bridgesplash/Shulker/compare/v1.1.1...v1.1.2) (2024-02-06)
 
-
 ### :bug: Bug Fixes :bug:
 
-* unique build script for java plugins [skip ci] ([9ac334f](https://github.com/bridgesplash/Shulker/commit/9ac334f6b146175e7729d9f26dc0f8b882fe1678))
+- unique build script for java plugins [skip ci] ([9ac334f](https://github.com/bridgesplash/Shulker/commit/9ac334f6b146175e7729d9f26dc0f8b882fe1678))
 
 ## [1.1.1](https://github.com/bridgesplash/Shulker/compare/v1.1.0...v1.1.1) (2024-02-06)
 
-
 ### :bug: Bug Fixes :bug:
 
-* release builds using npm ([c29f1e4](https://github.com/bridgesplash/Shulker/commit/c29f1e4ef9335bae2e26727ac6a437c8af385964))
-* remove unused variable ([7c0e18f](https://github.com/bridgesplash/Shulker/commit/7c0e18f33e4b0d7cd4c98b2073fa6e845f02098f))
+- release builds using npm ([c29f1e4](https://github.com/bridgesplash/Shulker/commit/c29f1e4ef9335bae2e26727ac6a437c8af385964))
+- remove unused variable ([7c0e18f](https://github.com/bridgesplash/Shulker/commit/7c0e18f33e4b0d7cd4c98b2073fa6e845f02098f))
 
 ## [1.1.0](https://github.com/bridgesplash/Shulker/compare/v1.0.12...v1.1.0) (2024-02-06)
 
-
 ### :sparkles: Features :sparkles:
 
-* exclude proxy from load balancer when full ([#396](https://github.com/bridgesplash/Shulker/issues/396)) ([e53e9f3](https://github.com/bridgesplash/Shulker/commit/e53e9f31d61f42b853c1c2616d5ab2dfcf047886))
-* **shulker-proxy-agent:** use proxy capacities as max slots in ping requests ([#394](https://github.com/bridgesplash/Shulker/issues/394)) ([235e6ba](https://github.com/bridgesplash/Shulker/commit/235e6ba39cd93bac7451b6f912a82b5e7a26a795))
-
+- exclude proxy from load balancer when full ([#396](https://github.com/bridgesplash/Shulker/issues/396)) ([e53e9f3](https://github.com/bridgesplash/Shulker/commit/e53e9f31d61f42b853c1c2616d5ab2dfcf047886))
+- **shulker-proxy-agent:** use proxy capacities as max slots in ping requests ([#394](https://github.com/bridgesplash/Shulker/issues/394)) ([235e6ba](https://github.com/bridgesplash/Shulker/commit/235e6ba39cd93bac7451b6f912a82b5e7a26a795))
 
 ### :bug: Bug Fixes :bug:
 
-* **shulker-operator:** bump proxy image to fix motd parsing error ([#397](https://github.com/bridgesplash/Shulker/issues/397)) ([35437b2](https://github.com/bridgesplash/Shulker/commit/35437b2bd3b1feb125ceb2585932a8e9d2a006d0))
+- **shulker-operator:** bump proxy image to fix motd parsing error ([#397](https://github.com/bridgesplash/Shulker/issues/397)) ([35437b2](https://github.com/bridgesplash/Shulker/commit/35437b2bd3b1feb125ceb2585932a8e9d2a006d0))
 
 ## [1.0.12](https://github.com/bridgesplash/Shulker/compare/v1.0.11...v1.0.12) (2024-02-06)
 

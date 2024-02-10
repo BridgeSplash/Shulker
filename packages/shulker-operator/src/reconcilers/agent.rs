@@ -1,4 +1,6 @@
-use shulker_crds::resourceref::{ResourceRefFromGithubReleaseSpec, ResourceRefFromSpec, ResourceRefSpec};
+use shulker_crds::resourceref::{
+    ResourceRefFromGithubReleaseSpec, ResourceRefFromSpec, ResourceRefSpec,
+};
 use url::Url;
 
 use crate::{

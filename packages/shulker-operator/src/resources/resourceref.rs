@@ -75,26 +75,28 @@ impl ResourceRef {
                 classifier,
             } => {
                 let github_url = "https://github.com/";
-                let repository_url = repository_url.strip_prefix(github_url).unwrap_or(repository_url);
+                let repository_url = repository_url
+                    .strip_prefix(github_url)
+                    .unwrap_or(repository_url);
 
                 let file_name = match classifier {
-                    None => format!("{}-{}.jar", artifact_id, classifier.as_ref().unwrap_or(&version)),
+                    None => format!(
+                        "{}-{}.jar",
+                        artifact_id,
+                        classifier.as_ref().unwrap_or(&version)
+                    ),
                     Some(classifier) => {
                         format!("{}-{}-{}.jar", artifact_id, version, classifier)
                     }
                 };
-
-                println!("{}  -   {}", github_url, repository_url);
 
                 let output_url_string = &format!(
                     "{}{}/releases/download/{}-{}/{}",
                     github_url, repository_url, version, artifact_id, file_name
                 );
 
-                println!("{}", output_url_string);
-
-                let url = url::Url::parse(output_url_string)
-                .map_err(ResourceRefError::InvalidUrlSpec)?;
+                let url =
+                    url::Url::parse(output_url_string).map_err(ResourceRefError::InvalidUrlSpec)?;
 
                 Ok(url)
             }
@@ -136,7 +138,7 @@ mod tests {
     }
 
     #[test]
-    fn serialize_github_release_with_github_prefix(){
+    fn serialize_github_release_with_github_prefix() {
         let resourceref = super::ResourceRef::GithubRelease {
             repository_url: "https://github.com/bridgesplash/Shulker".to_string(),
             artifact_id: "shulker-server-agent".to_string(),
