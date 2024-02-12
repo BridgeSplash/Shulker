@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/bridgesplash/Shulker/compare/v1.3.0...v1.4.0) (2024-02-12)
+
+
+### :sparkles: Features :sparkles:
+
+* custom config location ([579e1ee](https://github.com/bridgesplash/Shulker/commit/579e1ee31b2291e09ee0a7febac5352b37618de8))
+
 ## [1.3.0](https://github.com/bridgesplash/Shulker/compare/v1.2.0...v1.3.0) (2024-02-10)
 
 
