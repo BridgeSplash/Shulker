@@ -8,7 +8,10 @@ if [ "${SHULKER_VERSION_CHANNEL}" == "Paper" ] || [ "${SHULKER_VERSION_CHANNEL}"
   cp "${SHULKER_CONFIG_DIR}/spigot-config.yml" "${SHULKER_SERVER_CONFIG_DIR}/spigot.yml"
   mkdir -p "${SHULKER_SERVER_CONFIG_DIR}/config"
   cp "${SHULKER_CONFIG_DIR}/paper-global-config.yml" "${SHULKER_SERVER_CONFIG_DIR}/config/paper-global.yml"
+else
+  cp "${SHULKER_CONFIG_DIR}/custom-config.yml" "${SHULKER_SERVER_CONFIG_DIR}/config.yml"
 fi
+
 
 if [ ! -z "${SERVER_WORLD_URL+x}" ]; then
   (cd "${SHULKER_SERVER_CONFIG_DIR}" && wget "${SERVER_WORLD_URL}" -O - | tar -xzv)

@@ -94,6 +94,10 @@ impl ConfigMapBuilder {
                 "paper-global-config.yml".to_string(),
                 paper::PaperGlobalYml::from_spec(spec).to_string(),
             ),
+            (
+                "custom-config.yml".to_string(),
+                custom::CustomConfigYml::from_spec(spec).to_string(),
+            )
         ])
     }
 }
@@ -155,6 +159,7 @@ mod tests {
         assert!(data.contains_key("bukkit-config.yml"));
         assert!(data.contains_key("spigot-config.yml"));
         assert!(data.contains_key("paper-global-config.yml"));
+        assert!(data.contains_key("custom-config.yml"));
     }
 }
 
@@ -511,4 +516,72 @@ mod paper {
             insta::assert_snapshot!(yml);
         }
     }
+}
+
+mod custom{
+    use serde::{Deserialize, Serialize};
+
+    use shulker_crds::v1alpha1::minecraft_server::{MinecraftServerConfigurationProxyForwardingMode, MinecraftServerConfigurationSpec};
+
+    #[derive(Deserialize, Serialize, Clone, Debug)]
+    #[serde(rename_all = "kebab-case")]
+    pub struct CustomConfigYml {
+        online_mode: bool,
+        secret: String,
+    }
+    impl CustomConfigYml {
+        pub fn from_spec(spec: &MinecraftServerConfigurationSpec) -> Self {
+            CustomConfigYml {
+                online_mode: (
+                    spec.proxy_forwarding_mode == MinecraftServerConfigurationProxyForwardingMode::BungeeCord
+                    || spec.proxy_forwarding_mode == MinecraftServerConfigurationProxyForwardingMode::Velocity
+                ) ,
+                secret: "${CFG_VELOCITY_FORWARDING_SECRET}".to_string(),
+            }
+        }
+    }
+
+
+    impl ToString for CustomConfigYml {
+        fn to_string(&self) -> String {
+            let mut yml = serde_yaml::to_string(&self).unwrap();
+            yml.push('\n');
+
+            yml
+        }
+    }
+
+
+    #[cfg(test)]
+    mod tests {
+        use crate::reconcilers::minecraft_server::fixtures::TEST_SERVER;
+
+        #[test]
+        fn from_spec() {
+            // G
+            let spec = TEST_SERVER.spec.config.clone();
+
+            // W
+            let config = super::CustomConfigYml::from_spec(&spec);
+
+            // T
+            insta::assert_yaml_snapshot!(config);
+        }
+
+        #[test]
+        fn to_string() {
+            // G
+            let config = super::CustomConfigYml {
+                online_mode: true,
+                secret: "my-secret".to_string(),
+            };
+
+            // W
+            let yml = config.to_string();
+
+            // T
+            insta::assert_snapshot!(yml);
+        }
+    }
+
 }
