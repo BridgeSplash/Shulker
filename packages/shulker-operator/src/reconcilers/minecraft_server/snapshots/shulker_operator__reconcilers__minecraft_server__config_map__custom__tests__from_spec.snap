@@ -1,0 +1,7 @@
+---
+source: packages/shulker-operator/src/reconcilers/minecraft_server/config_map.rs
+expression: config
+---
+online-mode: true
+secret: "${CFG_VELOCITY_FORWARDING_SECRET}"
+

@@ -1,0 +1,8 @@
+---
+source: packages/shulker-operator/src/reconcilers/minecraft_server/config_map.rs
+expression: yml
+---
+online-mode: true
+secret: my-secret
+
+
