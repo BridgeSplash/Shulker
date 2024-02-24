@@ -97,7 +97,7 @@ impl ConfigMapBuilder {
             (
                 "custom-config.yml".to_string(),
                 custom::CustomConfigYml::from_spec(spec).to_string(),
-            )
+            ),
         ])
     }
 }
@@ -518,10 +518,12 @@ mod paper {
     }
 }
 
-mod custom{
+mod custom {
     use serde::{Deserialize, Serialize};
 
-    use shulker_crds::v1alpha1::minecraft_server::{MinecraftServerConfigurationProxyForwardingMode, MinecraftServerConfigurationSpec};
+    use shulker_crds::v1alpha1::minecraft_server::{
+        MinecraftServerConfigurationProxyForwardingMode, MinecraftServerConfigurationSpec,
+    };
 
     #[derive(Deserialize, Serialize, Clone, Debug)]
     #[serde(rename_all = "kebab-case")]
@@ -532,15 +534,14 @@ mod custom{
     impl CustomConfigYml {
         pub fn from_spec(spec: &MinecraftServerConfigurationSpec) -> Self {
             CustomConfigYml {
-                online_mode: (
-                    spec.proxy_forwarding_mode == MinecraftServerConfigurationProxyForwardingMode::BungeeCord
-                    || spec.proxy_forwarding_mode == MinecraftServerConfigurationProxyForwardingMode::Velocity
-                ) ,
+                online_mode: (spec.proxy_forwarding_mode
+                    == MinecraftServerConfigurationProxyForwardingMode::BungeeCord
+                    || spec.proxy_forwarding_mode
+                        == MinecraftServerConfigurationProxyForwardingMode::Velocity),
                 secret: "${CFG_VELOCITY_FORWARDING_SECRET}".to_string(),
             }
         }
     }
-
 
     impl ToString for CustomConfigYml {
         fn to_string(&self) -> String {
@@ -550,7 +551,6 @@ mod custom{
             yml
         }
     }
-
 
     #[cfg(test)]
     mod tests {
@@ -583,5 +583,4 @@ mod custom{
             insta::assert_snapshot!(yml);
         }
     }
-
 }
