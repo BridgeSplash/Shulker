@@ -370,6 +370,10 @@ spec:
                               type: object
                             nullable: true
                             type: array
+                          pluginFolderLocation:
+                            description: 'The folder location where plugins are stored. Defaults to "plugins"'
+                            type: string
+                            default: plugins
                           proxyForwardingMode:
                             default: Velocity
                             description: Type of forwarding the proxies are using between themselves and this `MinecraftServer`

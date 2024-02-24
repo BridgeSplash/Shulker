@@ -581,6 +581,10 @@ spec:
                                 - Velocity
                                 - BungeeCord
                               type: string
+                            pluginFolderLocation:
+                              description: 'The folder location where plugins are stored. Defaults to "plugins"'
+                              type: string
+                              default: plugins
                             serverProperties:
                               additionalProperties:
                                 type: string
