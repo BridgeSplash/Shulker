@@ -1,3 +1,16 @@
+## [1.5.0](https://github.com/bridgesplash/Shulker/compare/v1.4.0...v1.5.0) (2024-02-24)
+
+
+### :sparkles: Features :sparkles:
+
+* use java 21 (instead of 17) ([39e80e5](https://github.com/bridgesplash/Shulker/commit/39e80e5e6aec3854b257d06c5bffa3be12b1de5a))
+
+
+### :bug: Bug Fixes :bug:
+
+* ensure snapshots for tests ([86df623](https://github.com/bridgesplash/Shulker/commit/86df623ab4cc46a4e85d2b6bf26cbf3957016737))
+* missing helm config values for pluginFolderLocation [skip ci] ([664c046](https://github.com/bridgesplash/Shulker/commit/664c04604d60eb0b523379d75b80e499dc5e529c))
+
 ## [1.4.0](https://github.com/bridgesplash/Shulker/compare/v1.3.0...v1.4.0) (2024-02-12)
 
 ### :sparkles: Features :sparkles:
