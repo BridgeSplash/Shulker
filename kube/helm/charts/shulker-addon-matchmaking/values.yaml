@@ -3,7 +3,7 @@ fullnameOverride: "shulker-addon-matchmaking"
 
 director:
   image:
-    repository: ghcr.io/jeremylvln/shulker-addon-matchmaking
+    repository: ghcr.io/bridgesplash/shulker-addon-matchmaking
     pullPolicy: Always
     # Overrides the image tag whose default is the chart appVersion.
     tag: ""
@@ -97,7 +97,7 @@ director:
 
 mmf:
   image:
-    repository: ghcr.io/jeremylvln/shulker-addon-matchmaking
+    repository: ghcr.io/bridgesplash/shulker-addon-matchmaking
     pullPolicy: Always
     # Overrides the image tag whose default is the chart appVersion.
     tag: ""

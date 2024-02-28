@@ -1,0 +1,7 @@
+{
+  "entrypoint": "io.shulkermc.serveragent.minestom.ShulkerServerAgentMinestom",
+  "name": "ShulkerServerAgent",
+  "version": "1.0.0",
+  "dependencies": [],
+  "externalDependencies": {}
+}
