@@ -5,10 +5,10 @@ kind: ServiceAccount
 metadata:
   name: shulker-operator
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator-rbac
 ---
@@ -5587,10 +5587,10 @@ kind: ClusterRole
 metadata:
   name: shulker-operator:workload
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator-rbac
 rules:
@@ -5652,10 +5652,10 @@ kind: ClusterRoleBinding
 metadata:
   name: shulker-operator:workload
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator-rbac
 roleRef:
@@ -5674,10 +5674,10 @@ kind: Role
 metadata:
   name: shulker-operator:leader-election
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator-rbac
 rules:
@@ -5700,10 +5700,10 @@ kind: RoleBinding
 metadata:
   name: shulker-operator:leader-election
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator-rbac
 roleRef:
@@ -5722,10 +5722,10 @@ kind: Service
 metadata:
   name: shulker-operator-metrics
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator-metrics
 spec:
@@ -5746,10 +5746,10 @@ kind: Service
 metadata:
   name: shulker-operator
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator
 spec:
@@ -5770,10 +5770,10 @@ kind: Deployment
 metadata:
   name: shulker-operator
   labels:
-    helm.sh/chart: shulker-operator-1.5.0
+    helm.sh/chart: shulker-operator-1.5.1
     app.kubernetes.io/name: shulker-operator
     app.kubernetes.io/instance: shulker-operator
-    app.kubernetes.io/version: "1.5.0"
+    app.kubernetes.io/version: "1.5.1"
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: shulker-operator
 spec:
@@ -5786,17 +5786,17 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: shulker-operator-1.5.0
+        helm.sh/chart: shulker-operator-1.5.1
         app.kubernetes.io/name: shulker-operator
         app.kubernetes.io/instance: shulker-operator
-        app.kubernetes.io/version: "1.5.0"
+        app.kubernetes.io/version: "1.5.1"
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: shulker-operator
     spec:
       serviceAccountName: shulker-operator
       containers:
         - name: shulker-operator
-          image: "ghcr.io/bridgesplash/shulker-operator:1.5.0"
+          image: "ghcr.io/bridgesplash/shulker-operator:1.5.1"
           imagePullPolicy: Always
           args:
             - --metrics-bind-address=0.0.0.0:8080

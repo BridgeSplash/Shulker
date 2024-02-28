@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/bridgesplash/Shulker/compare/v1.5.0...v1.5.1) (2024-02-28)
+
+
+### :bug: Bug Fixes :bug:
+
+* minestom extension resource, update matchmaking link ([d65d7f9](https://github.com/bridgesplash/Shulker/commit/d65d7f981b7b6b4a128eb61cd96e0dafb071cadf))
+
 ## [1.5.0](https://github.com/bridgesplash/Shulker/compare/v1.4.0...v1.5.0) (2024-02-24)
 
 
